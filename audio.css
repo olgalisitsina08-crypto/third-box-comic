@@ -1,0 +1,16 @@
+/* Кнопка в свободном месте между прежними кнопками: геометрия комикса не меняется. */
+.toolbar{position:relative}
+.audio-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;width:118px;padding:7px 8px;border:1px solid #8f9b9f;border-radius:12px;background:#1d303b;color:#f2eadc;font-size:13px;font-weight:800;line-height:1.15;visibility:visible;touch-action:manipulation}
+.toolbar>.audio-toggle{position:absolute;left:60px}
+.toolbar.on-cover>.audio-toggle{left:50%;transform:translateX(-50%)}
+@media(max-width:375px){.toolbar:not(.on-cover)>.audio-toggle{width:44px}.toolbar:not(.on-cover)>.audio-toggle .audio-toggle-label{display:none}}
+.audio-toggle svg{width:18px;height:18px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.audio-toggle .audio-muted-line{display:none}
+.audio-toggle.is-muted .audio-wave{display:none}
+.audio-toggle.is-muted .audio-muted-line{display:block}
+.audio-toggle:active{background:#304857}
+/* Дубликат того же переключателя доступен и внутри открытого окна с уликой. */
+.modal>.audio-toggle{position:fixed;top:max(7px,env(safe-area-inset-top));left:max(12px,env(safe-area-inset-left));z-index:31}
+.audio-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.birthday-audio{position:absolute;bottom:4%;left:50%;transform:translateX(-50%);width:82%;min-height:46px;padding:10px 14px;border:1px solid #e4c184;border-radius:12px;background:#dfb363;color:#202b2f;font-size:clamp(13px,3.8cqw,18px);font-weight:900;line-height:1.2;pointer-events:auto}
+.birthday-audio:active{background:#f2ce8e}

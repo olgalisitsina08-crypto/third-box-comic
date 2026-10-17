@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<meta name="theme-color" content="#15222b" />
+<meta name="description" content="Первый выпуск приключенческого комикса «Тайна третьей коробки»" />
+<title>Эжен и Александр · Тайна третьей коробки</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="audio.css" />
+</head>
+<body>
+<div id="app" class="app">
+  <header class="topbar" aria-hidden="true"><div id="progress" class="progress"></div></header>
+  <main class="main">
+    <div id="panel" class="comic-panel" aria-label="Кадр комикса">
+      <img id="panel-art" class="panel-art" src="assets/scene_01.webp" alt="" draggable="false" />
+      <div id="panel-layer" class="panel-layer"></div>
+      <div id="bubble" class="speech" hidden aria-live="polite"><div id="speaker" class="speaker" aria-hidden="true"></div><div id="dialogue" class="dialogue"></div></div>
+      <button type="button" id="object-button" class="object-button" hidden></button>
+    </div>
+  </main>
+  <footer class="toolbar">
+    <button id="previous" type="button" class="control secondary" aria-label="Предыдущая реплика">←</button>
+    <div id="prompt" class="prompt" aria-live="polite"></div>
+    <button type="button" class="audio-toggle" data-sound-toggle aria-pressed="true" aria-label="Выключить звук">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path class="audio-wave" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="audio-muted-line" d="m15 9 6 6m0-6-6 6"/></svg>
+      <span class="audio-toggle-label">Звук вкл.</span>
+    </button>
+    <button id="next" type="button" class="control primary">Далее <span aria-hidden="true">→</span></button>
+  </footer>
+</div>
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-label="Важная улика">
+  <button type="button" class="audio-toggle" data-sound-toggle aria-pressed="true" aria-label="Выключить звук">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4Z"/><path class="audio-wave" d="M15 8a6 6 0 0 1 0 8m3-11a10 10 0 0 1 0 14"/><path class="audio-muted-line" d="m15 9 6 6m0-6-6 6"/></svg>
+    <span class="audio-toggle-label">Звук вкл.</span>
+  </button>
+  <div class="modal-wrap">
+    <button type="button" class="modal-x" id="modal-close" aria-label="Закрыть">×</button>
+    <div class="modal-stage" id="modal-stage">
+      <img id="modal-art" alt="" />
+      <div id="modal-text" class="modal-text" hidden></div>
+      <div id="modal-speech" class="modal-speech" hidden></div>
+    </div>
+    <button id="modal-next" type="button" class="modal-next">Продолжить →</button>
+  </div>
+</div>
+<div id="audio-status" class="audio-status" role="status" aria-live="polite"></div>
+<script src="music.js"></script>
+<script src="audio.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
