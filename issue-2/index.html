@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#15222b">
+<title>Тайна третьей коробки · Выпуск 2 · Предпросмотр</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+ <header><div id="progress" role="status"></div></header>
+ <main><section id="panel" aria-label="Кадр комикса">
+  <img id="art" src="assets/frame_01.png" alt="Гусь в ковше" draggable="false">
+  <div id="layer"></div>
+  <div id="bubble" class="speech" hidden aria-live="polite"></div>
+ </section></main>
+ <footer>
+  <button id="previous" class="secondary" aria-label="Предыдущая реплика">←</button>
+  <button id="sound" class="secondary" aria-pressed="true" aria-label="Выключить звук"><span aria-hidden="true">♫</span> <span id="sound-label">Звук вкл.</span></button>
+  <button id="next" class="primary">Далее →</button>
+ </footer>
+</div>
+<dialog id="card-modal" aria-label="Карточка крупным планом">
+ <button id="close-card" class="secondary" aria-label="Закрыть карточку">×</button>
+ <img id="card-art" src="assets/card.png" alt="Карточка: охотник, олень и ангар с круглым окном">
+ <button id="card-done" class="primary">Вернуться к расследованию</button>
+</dialog>
+<p id="audio-status" role="status" class="sr-only"></p>
+<script src="frames.js"></script><script src="music.js"></script><script src="audio.js"></script><script src="script.js"></script>
+</body></html>
